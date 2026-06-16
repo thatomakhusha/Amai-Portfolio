@@ -50,7 +50,9 @@ body {
     border: none;
     font-size: 22px;
     cursor: pointer;
-    color: #444;
+}
+.hamburger i {
+    color: gray;
 }
 .nav-links {
     display: flex;
