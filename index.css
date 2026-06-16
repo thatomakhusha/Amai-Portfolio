@@ -50,6 +50,7 @@ body {
     border: none;
     font-size: 22px;
     cursor: pointer;
+    color: #444;
 }
 .nav-links {
     display: flex;
