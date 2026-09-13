@@ -52,3 +52,46 @@ document.querySelectorAll(".nav-links a").forEach(link => {
         navbar.classList.remove("active");
     });
 });
+
+/* =========================================
+   CERTIFICATE PREVIEW
+   ========================================= */
+
+const certificateModal = document.getElementById("certificateModal");
+const certificatePreview = document.getElementById("certificatePreview");
+
+
+function openCertificate(pdf) {
+    certificatePreview.src = pdf;
+
+    certificateModal.classList.add("active");
+
+    document.body.style.overflow = "hidden";
+}
+
+
+function closeCertificate() {
+    certificateModal.classList.remove("active");
+
+    certificatePreview.src = "";
+
+    document.body.style.overflow = "";
+}
+
+
+/* Close when clicking the dark background */
+
+certificateModal.addEventListener("click", function (event) {
+    if (event.target === certificateModal) {
+        closeCertificate();
+    }
+});
+
+
+/* Close with Escape key */
+
+document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && certificateModal.classList.contains("active")) {
+        closeCertificate();
+    }
+});
