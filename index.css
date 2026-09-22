@@ -54,6 +54,13 @@ body {
 .hamburger i {
     color: gray;
 }
+.mobile-brand {
+    display: none;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    font-weight: 600;
+    white-space: nowrap;
+}
 .nav-links {
     display: flex;
     align-items: center;
@@ -607,9 +614,17 @@ footer a:hover {
         display: block;
     }
 
+    .mobile-brand {
+        display: block;
+    }
+
     .nav-links,
     .cv-button {
         display: none;
+    }
+
+    .navbar {
+        justify-content: space-between;
     }
 
     .navbar.active {
