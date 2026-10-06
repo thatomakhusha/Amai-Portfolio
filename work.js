@@ -8,47 +8,47 @@
 
 const WORK_PROJECTS = [
     {
-        title: "Refilwe Malatji",
-        label: "Feature Article",
-        pages: ["work/refilwe-malatji-1.jpeg", "work/refilwe-malatji-2.jpeg"],
+        title: "Student Spotlight",
+        label: "Editorial Features",
+        pages: ["work/student-spotlight.jpeg","work/refilwe-malatji-1.jpeg", "work/refilwe-malatji-2.jpeg"],
         caption: "A PDBY student profile celebrating UP's Refilwe Malatji and the young women redefining pageantry.",
         layout: "hero"
     },
     {
-        title: "Student Spotlight",
-        label: "Campaign Identity",
-        pages: ["work/student-spotlight.jpeg"],
+        title: "Event Postors",
+        label: "Digital Event Promotion",
+        pages: ["work/join-our-team.jpeg", "work/live-broadcast.jpeg", "work/campus-photo-comp.jpeg"],
         caption: "Campaign identity for PDBY's Student Spotlight series, recognising the achievements of UP students."
     },
     {
         title: "Journalism Statement",
-        label: "Social Media Editorial",
-        pages: ["work/journalism-statement.jpeg"],
+        label: "Editorial Communication",
+        pages: ["work/journalism-statement.jpeg", "work/if-you-see-something.jpeg"],
         caption: "A social media editorial explaining how every PDBY article is researched, written and illustrated by students."
     },
     {
-        title: "Live Broadcast",
-        label: "Event Promotion",
-        pages: ["work/live-broadcast.jpeg"],
+        title: "87th PDBY Anniversary",
+        label: "Digital Campaign",
+        pages: ["work/87th-anniversary-1.jpeg", "work/87th-anniversary-1.jpeg"],
         caption: "Promotion for PDBY Media's live coverage of the Q1 Student Forum on 26 March 2026."
     },
     {
         title: "88th Term Editorial",
-        label: "Team Announcement",
+        label: "Team Communications",
         pages: ["work/editorial-2026-2027.jpeg"],
         caption: "Announcement of the 2026/2027 PDBY Media editorial team."
     },
     {
-        title: "News Roundup",
-        label: "Content Promotion",
-        pages: ["work/news-roundup.jpeg"],
+        title: "Content Promotion Posters",
+        label: "Content Marketing",
+        pages: ["work/news-roundup.jpeg", "work/online-exclusive-articles.jpeg"],
         caption: "Content promotion for PDBY's News Roundup.",
         layout: "wide"
     },
     {
-        title: "Shoot Your Shot",
-        label: "Promotional Artwork",
-        pages: ["work/shoot-your-shot.jpeg"],
+        title: "PDBY Collaborations",
+        label: "Partnership Communications",
+        pages: ["work/efc-tickets1.jpeg", "work/efc-tickets2.jpeg"],
         caption: "Promotional artwork for the Shoot Your Shot online offer."
     }
 ];
