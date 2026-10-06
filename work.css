@@ -1,0 +1,503 @@
+/* =========================================================
+   SELECTED WORK
+   Loaded AFTER index.css. Everything is scoped to .work and
+   .work-modal so it can't collide with the rest of the site.
+   ========================================================= */
+
+.work {
+    --work-bg: #161613;
+    --work-ink: #f3efe6;
+    --work-muted: rgba(243, 239, 230, 0.62);
+    --work-red: #b3261e;
+    --work-serif: 'Instrument Serif', Georgia, serif;
+    --work-sans: 'DM Sans', 'Inter', sans-serif;
+
+    background: var(--work-bg);
+    color: var(--work-ink);
+    font-family: var(--work-sans);
+
+    /* index.css centres every <section>; this one is left-aligned */
+    text-align: left;
+    padding: clamp(64px, 8vw, 110px) clamp(20px, 4vw, 72px);
+}
+
+.work-inner {
+    max-width: 1760px;
+    margin: 0 auto;
+}
+
+/* ---------- Heading ---------- */
+
+.work-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 40px;
+
+    margin-bottom: clamp(36px, 5vw, 72px);
+}
+
+.work-eyebrow {
+    margin: 0 0 26px;
+
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--work-muted);
+}
+
+.work-title {
+    margin: 0;
+
+    font-family: var(--work-serif);
+    font-weight: 400;
+    font-size: clamp(46px, 7vw, 104px);
+    line-height: 1;
+    letter-spacing: -0.03em;
+}
+
+.work-title em {
+    font-style: normal;
+    color: var(--work-red);
+}
+
+.work-intro {
+    max-width: 440px;
+    margin: 0 0 10px;
+
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--work-muted);
+}
+
+/* ---------- Grid ---------- */
+/*
+   3 columns, 400px rows. Cards auto-place in order:
+
+   [ 01 hero  ] [ 02 ]
+   [ (2×2)    ] [ 03 ]
+   [ 04 ] [ 05 ] [  ]
+   [ 06 wide  ] [ 07 ]
+*/
+
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-rows: 400px;
+    gap: 16px;
+}
+
+.work-card {
+    position: relative;
+    display: block;
+
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+
+    background: #232320;
+    color: inherit;
+    font: inherit;
+    text-align: left;
+
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.work-card--hero {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.work-card--wide {
+    grid-column: span 2;
+}
+
+.work-card img {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center top;
+
+    transition: transform 0.7s ease;
+}
+
+.work-card:hover img {
+    transform: scale(1.03);
+}
+
+.work-card:focus-visible {
+    outline: 2px solid var(--work-ink);
+    outline-offset: 3px;
+}
+
+/* Caption bar */
+
+.work-card-bar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    padding: 64px 24px 22px;
+
+    background: linear-gradient(
+        to top,
+        rgba(18, 18, 15, 0.92) 0%,
+        rgba(18, 18, 15, 0.6) 55%,
+        rgba(18, 18, 15, 0) 100%
+    );
+}
+
+.work-card-num {
+    font-family: var(--work-serif);
+    font-size: 16px;
+    color: var(--work-muted);
+}
+
+.work-card-text {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+}
+
+.work-card-title {
+    font-family: var(--work-serif);
+    font-size: 25px;
+    line-height: 1.1;
+    color: var(--work-ink);
+}
+
+.work-card-label {
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--work-muted);
+}
+
+.work-card-arrow {
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 46px;
+    height: 46px;
+    margin-left: auto;
+
+    border: 1px solid rgba(243, 239, 230, 0.6);
+    border-radius: 50%;
+
+    font-size: 15px;
+    color: var(--work-ink);
+
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.work-card:hover .work-card-arrow,
+.work-card:focus-visible .work-card-arrow {
+    background: var(--work-ink);
+    color: var(--work-bg);
+}
+
+/* =========================================================
+   MODAL VIEWER
+   ========================================================= */
+
+.work-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1100; /* above the navbar and certificate modal (1000) */
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+
+    background: rgba(10, 10, 8, 0.72);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+.work-modal.active {
+    display: flex;
+}
+
+.work-modal-panel {
+    display: flex;
+    flex-direction: column;
+
+    width: min(1200px, 100%);
+    max-height: 94vh;
+
+    background: #f4f1e8;
+    color: #1a1915;
+    font-family: var(--work-sans, 'DM Sans', 'Inter', sans-serif);
+
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
+}
+
+.work-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding: 22px 24px;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.work-modal-label {
+    margin: 0 0 6px;
+
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #6b675c;
+}
+
+.work-modal-title {
+    margin: 0;
+
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 1.1;
+}
+
+.work-modal-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.work-modal-count {
+    min-width: 36px;
+    text-align: center;
+
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: #4a473e;
+}
+
+.work-modal-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+    padding: 0;
+
+    border: 1px solid rgba(0, 0, 0, 0.22);
+    border-radius: 50%;
+
+    background: transparent;
+    color: #1a1915;
+    font-size: 14px;
+    cursor: pointer;
+
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.work-modal-btn:hover {
+    background: rgba(0, 0, 0, 0.07);
+}
+
+.work-modal-btn--close {
+    width: 46px;
+    height: 46px;
+
+    border-color: #1a1915;
+    background: #1a1915;
+    color: #f4f1e8;
+}
+
+.work-modal-btn--close:hover {
+    background: #3a382f;
+}
+
+.work-modal-btn:focus-visible,
+.work-modal-next:focus-visible {
+    outline: 2px solid #b3261e;
+    outline-offset: 2px;
+}
+
+.work-modal-stage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 1;
+    min-height: 0;
+    padding: 24px;
+
+    background: #dedacd;
+    overflow: auto;
+}
+
+.work-modal-stage img {
+    display: block;
+
+    max-width: 100%;
+    max-height: calc(94vh - 190px);
+    width: auto;
+    height: auto;
+
+    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.2);
+}
+
+.work-modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    padding: 16px 24px;
+}
+
+.work-modal-caption {
+    margin: 0;
+
+    font-size: 14px;
+    line-height: 1.5;
+    color: #5a574e;
+}
+
+.work-modal-next {
+    flex-shrink: 0;
+
+    padding: 6px 0;
+    border: 0;
+
+    background: none;
+    color: #1a1915;
+    font: inherit;
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.work-modal-next i {
+    margin-left: 8px;
+}
+
+.work-modal-next:hover {
+    color: var(--work-red, #b3261e);
+}
+
+.work-modal-nav {
+    display: contents;
+}
+
+/* Single-page projects: hide paging UI */
+
+.work-modal.is-single .work-modal-nav,
+.work-modal.is-single .work-modal-next {
+    display: none;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .work-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: 340px;
+    }
+
+    .work-card--hero {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    .work-card--wide {
+        grid-column: span 2;
+    }
+
+    /* avoid a lonely half-width card at the end */
+    .work-card:last-child {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 640px) {
+
+    .work-head {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .work-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 380px;
+    }
+
+    .work-card--hero,
+    .work-card--wide,
+    .work-card:last-child {
+        grid-column: span 1;
+    }
+
+    .work-card-bar {
+        padding: 56px 16px 18px;
+        gap: 12px;
+    }
+
+    .work-card-title {
+        font-size: 22px;
+    }
+
+    .work-modal {
+        padding: 10px;
+    }
+
+    .work-modal-header {
+        padding: 16px;
+    }
+
+    .work-modal-title {
+        font-size: 22px;
+    }
+
+    .work-modal-btn {
+        width: 38px;
+        height: 38px;
+    }
+
+    .work-modal-btn--close {
+        width: 40px;
+        height: 40px;
+    }
+
+    .work-modal-stage {
+        padding: 14px;
+    }
+
+    .work-modal-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+
+        padding: 14px 16px;
+    }
+}
