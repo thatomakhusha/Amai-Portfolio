@@ -575,67 +575,121 @@ section {
     background-color: rgba(0, 0, 0, 0.05);
 }
 
-.grid3 {
-    display: flex;
-    justify-content: center;
-
-    gap: 25px;
-
-    flex-wrap: wrap;
+.contact-sub {
+    text-align: center;
+    margin: -10px 0 40px;
+    opacity: 0.7;
 }
 
-.grid-info2 {
-    text-align: left;
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+    max-width: 1100px;
+    margin: 0 auto;
+}
 
-    background: white;
+.contact-col {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
 
-    padding: 22px 28px;
+.contact-label {
+    margin: 0 0 4px;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    opacity: 0.6;
+}
 
-    border-radius: 16px;
-
+.contact-card {
     display: flex;
     align-items: center;
-
     gap: 18px;
 
-    min-width: 260px;
+    background: white;
+    padding: 22px 28px;
+    border-radius: 16px;
+    text-align: left;
 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
     transition:
         transform 0.25s ease,
         box-shadow 0.25s ease;
-
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
-.grid-info2 i {
-    font-size: 24px;
-    color: black;
-
-    width: 40px;
-    height: 40px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: rgba(0, 0, 0, 0.05);
-
-    border-radius: 50%;
-}
-
-.grid-info2:hover {
+.contact-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
 }
 
-.grid-heading2 {
+.contact-icon {
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.05);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+    color: black;
+}
+
+.contact-avatar {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.contact-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.contact-name {
     margin: 0;
     font-size: 18px;
     font-weight: bold;
 }
 
-.grid-info2 p {
-    margin: 4px 0;
+.contact-pill {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 10px 16px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 999px;
+
+    color: black;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.25s ease;
+}
+
+.contact-pill:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+/* Stack on tablets and phones */
+@media (max-width: 800px) {
+    .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .contact-card {
+        flex-wrap: wrap;
+    }
+
+    .contact-pill {
+        width: 100%;
+        justify-content: center;
+    }
 }
 
 /* ================= FOOTER ================= */
