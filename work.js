@@ -39,7 +39,7 @@ const WORK_PROJECTS = [
         caption: "Announcement of the 2026/2027 PDBY Media editorial team."
     },
     {
-        title: "From the Editor",
+        title: "Editorial",
         label: "In Print",
         pages: ["work/from-the-editor.jpeg"],
         caption: "My first column as Editor, published in the PDBY's 19 October 2026 edition."
