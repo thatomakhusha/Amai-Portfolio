@@ -29,7 +29,7 @@ const WORK_PROJECTS = [
     {
         title: "87th PDBY Anniversary",
         label: "Digital Campaign",
-        pages: ["work/87th-anniversary-1.jpeg", "work/87th-anniversary-1.jpeg"],
+        pages: ["work/87th-anniversary-1.jpeg", "work/87th-anniversary-2.jpeg"],
         caption: "Promotion for PDBY Media's live coverage of the Q1 Student Forum on 26 March 2026."
     },
     {
@@ -37,6 +37,12 @@ const WORK_PROJECTS = [
         label: "Team Communications",
         pages: ["work/editorial-2026-2027.jpeg"],
         caption: "Announcement of the 2026/2027 PDBY Media editorial team."
+    },
+    {
+        title: "From the Editor",
+        label: "In Print",
+        pages: ["work/from-the-editor.jpeg"],
+        caption: "My first column as Editor, published in the PDBY's 19 October 2026 edition."
     },
     {
         title: "Content Promotion Posters",
